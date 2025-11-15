@@ -12,23 +12,45 @@
  */
 
  const flatten = (nums) => {
-  const result = []
+   const result = [];
 
-  const flattenHelper = (nums) => {
-    for (elem of nums){
-      if (Array.isArray(elem)){
-        flattenHelper(elem)
-      }else{
-        result.push(elem)
-      }
-    }
-  }
+   const flattenHelper = (nums) => {
+     for (elem of nums) {
+       if (Array.isArray(elem)) {
+         flattenHelper(elem);
+       } else {
+         result.push(elem);
+       }
+     }
+   };
 
-  flattenHelper(nums)
+   flattenHelper(nums);
 
-  return result
-
-
+   return result;
  };
 
-module.exports = flatten; 
+ module.exports = flatten; 
+
+
+
+
+
+
+
+
+// // Chat GPT Solution
+// const flatten = (nums) => {
+//   let result = [];
+
+//   for (let item of nums) {
+//     if (Array.isArray(item)) {
+//       result.push(...flatten(item)); // recursively flatten nested arrays
+//     } else {
+//       result.push(item);
+//     }
+//   }
+
+//   return result;
+// };
+
+// module.exports = flatten;
