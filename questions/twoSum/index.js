@@ -11,7 +11,38 @@
  */
 
 const twoSum = (nums, target) => {
-   
 }
 
 module.exports = twoSum;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // Chat GPT solution
+
+// const twoSum = (nums, target) => {
+//   const map = {}; // value → index
+
+//   for (let i = 0; i < nums.length; i++) {
+//     const num = nums[i];
+//     const needed = target - num;
+
+//     if (map.hasOwnProperty(needed)) {
+//       return [map[needed], i];
+//     }
+
+//     map[num] = i;
+//   }
+// };
+
+// module.exports = twoSum;
