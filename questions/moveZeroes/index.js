@@ -12,7 +12,48 @@
  */
 
  const moveZeroes = (nums) => {
+   let l = 0;
+   let r = 0;
 
-}
+   while (r < nums.length) {
+     if (nums[r] !== 0) {
+       let temp = nums[r];
+       nums[r] = nums[l];
+       nums[l] = temp;
+       l += 1
+     }
+     r += 1;
+   }
+   return nums
+ };
 
 module.exports = moveZeroes;
+
+
+
+
+
+
+
+// // Chat GPT Solution
+// const moveZeroes = (nums) => {
+//   let insertPos = 0;
+
+//   // Move non-zero values forward
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] !== 0) {
+//       nums[insertPos] = nums[i];
+//       insertPos++;
+//     }
+//   }
+
+//   // Fill remaining positions with zeroes
+//   while (insertPos < nums.length) {
+//     nums[insertPos] = 0;
+//     insertPos++;
+//   }
+
+//   return nums;
+// }
+
+// module.exports = moveZeroes;
