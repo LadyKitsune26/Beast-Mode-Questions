@@ -11,8 +11,59 @@
  * 
  */
 
+
+// David's solution
+// O(n) time | O(1) space
 const twoSortedSum = (nums, target) => {
+    let l = 0
+    let r = nums.length - 1
+
+    while (l < r) { // O(n)
+         const sum = nums[l] + nums[r]
+
+         if (sum > target) {
+            r--;
+         }
+
+         else if (sum < target) {
+            l++;
+         }
+
+         else {
+            return [l, r]
+         }
+    }
 
 }
 
 module.exports = twoSortedSum;
+
+
+
+
+
+
+
+// // Chat GPT Solution
+// const twoSortedSum = (nums, target) => {
+//   let left = 0;
+//   let right = nums.length - 1;
+
+//   while (left < right) {
+//     const sum = nums[left] + nums[right];
+
+//     if (sum === target) {
+//       return [left, right];
+//     }
+
+//     if (sum < target) {
+//       left++;        // need a bigger sum
+//     } else {
+//       right--;       // need a smaller sum
+//     }
+//   }
+
+//   return null; // if no two numbers match
+// };
+
+// module.exports = twoSortedSum;
