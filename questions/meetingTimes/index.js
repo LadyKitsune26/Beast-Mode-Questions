@@ -10,8 +10,48 @@
  * 
  */
 
- const meetingTimes = (times) => {
 
+// Frontend Simplified solution
+ const meetingTimes = (times) => {
+    times.sort((a, b) => a[0] - b[0])
+    for (let i = 1; i < times.length; i++) {
+        const currentStart = times[i][0]
+        const prevEnd = times[i - 1][1]
+
+        if (currentStart < prevEnd) {
+            return false
+        }
+    }
+    return true
  };
 
 module.exports = meetingTimes;
+
+
+
+
+
+
+
+
+
+
+// // Chat GPT Solution
+// const meetingTimes = (times) => {
+//   // Step 1: sort by start time
+//   times.sort((a, b) => a[0] - b[0]);
+
+//   // Step 2: check for overlap
+//   for (let i = 1; i < times.length; i++) {
+//     let prevEnd = times[i - 1][1];
+//     let currentStart = times[i][0];
+
+//     if (currentStart < prevEnd) {
+//       return false; // overlap found
+//     }
+//   }
+
+//   return true; // no overlaps
+// };
+
+// module.exports = meetingTimes;
