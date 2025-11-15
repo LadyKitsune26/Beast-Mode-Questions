@@ -23,8 +23,36 @@
        return true;
      }
    }
-
    return false;
  };
 
 module.exports = sumOfTwo;
+
+
+
+
+
+
+
+
+
+
+
+// // Chat GPT Solution
+// const sumOfTwo = (nums1, nums2, target) => {
+//   const needed = new Set();
+
+//   for (let num of nums1) {
+//     needed.add(target - num);
+//   }
+
+//   for (let num of nums2) {
+//     if (needed.has(num)) {
+//       return true;
+//     }
+//   }
+
+//   return false;
+// };
+
+// module.exports = sumOfTwo;
